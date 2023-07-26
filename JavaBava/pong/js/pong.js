@@ -26,9 +26,10 @@ p2.color = `white`
 var ball = new Box();
 ball.w = 20
 ball.h = 20
-ball.vx = -2
-ball.vy = -2
+ball.vx = -7
+ball.vy = -5
 ball.color = `white`
+
 
 function main()
 {
