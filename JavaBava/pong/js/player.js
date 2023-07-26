@@ -8,4 +8,7 @@ class Player
         this.highScore = 0 
         this.pad 
     }
+
+   
+
 }

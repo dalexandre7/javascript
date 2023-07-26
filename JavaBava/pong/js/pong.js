@@ -14,6 +14,7 @@ p1.w = 20
 p1.h = 150
 p1.x = 0 + p1.w/2
 p1.color = `white`
+
 //p2 setup
 var p2 = new Box();
 p2.w = 20
@@ -29,6 +30,13 @@ ball.h = 20
 ball.vx = -7
 ball.vy = -5
 ball.color = `white`
+
+//Player array
+player = [new Player(), new Player()]
+player[0].pad = new Box(); 
+player[1].pad = new Box(); 
+console.log(player)
+
 
 
 function main()
