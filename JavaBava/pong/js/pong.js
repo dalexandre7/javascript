@@ -109,6 +109,8 @@ function main()
         player[1].score += 1
     }
    console.log(`${player[0].score} | ${player[1].score} `)
+   var hScore = document.querySelectorAll('#score div')
+
     if(ball.y < 0)
     {
         ball.y = 0
@@ -138,4 +140,9 @@ function main()
     pad[0].draw()
     pad[1].draw()
     ball.draw()
+    for(i = 0; i <hScore.length; i++ )
+    { 
+        hScore[i].innerHTML =`${player[i].score} ` 
+        
+    }
 }
