@@ -34,7 +34,7 @@ pad[1].color = `white`
 var ball = new Box();
 ball.w = 20
 ball.h = 20
-ball.vx = -7
+ball.vx = -100
 ball.vy = -5
 ball.color = `white`
 
