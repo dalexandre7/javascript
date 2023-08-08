@@ -17,6 +17,33 @@ function myFunction() {
         . Show the fill's hex code in the output div 
 
 -----------*/
+var userInput = document.querySelectorAll(".fill");
+console.log(userInput)
+
+
+    for (let i=0; i<pad.length; i++)
+    {
+        userInput[i].value = player[i].fill; 
+        console.log(userInput)
+        userInput[i].nextElementSibling.innerHTML = player[i].fill;
+        userInput[i].addEventListener("input", playercolor)
+        function playercolor(e) {
+            player[i].fill = e.target.value
+            player[i].pad.fill = e.target.value
+            userInput[i].nextElementSibling.innerHTML = player[i].fill;
+            
+               
+        }
+
+
+
+
+
+
+
+
+    }
+
 
 /*---------
     Program the six key inputs to do the following:
