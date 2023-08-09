@@ -19,9 +19,13 @@ function myFunction() {
 -----------*/
 var userInput = document.querySelectorAll(".fill");
 var userStroke = document.querySelectorAll(".stroke");
+var userPower = document.querySelectorAll(".power")
+
 var userU = document.querySelectorAll(".u")
 var userD = document.querySelectorAll(".d")
 var userS = document.querySelectorAll(".s")
+
+var user 
 console.log(userInput)
 
 
@@ -52,13 +56,29 @@ console.log(userInput)
             
                
         }
+        userPower[i].value = player[i].power; 
+        console.log(userPower)
+        userPower[i].nextElementSibling.innerHTML = player[i].power;
+        userPower[i].addEventListener("input", playerpower)
+
+        function playerpower(e) {
+            player[i].power = e.target.value
+            player[i].pad.power = e.target.value
+            e.target.nextElementSibling.innerHTML = player[i].power;
+           
+            
+               
+        }
+ 
+ 
+        
 
 
-            userU[i] = player[i].keys.u; 
+            userU[i] = player[i].keys[userU[i].className]; 
             userU[i].addEventListener(`keydown`, function(e){
                 userU[i].value = [e.key]
-                player[i].keys.u = userU[i].value
-                userU[i].nextElementSibling.innerHTML = player[i].keys.u
+                player[i].keys[e.target.className] = userU[i].value
+                userU[i].nextElementSibling.innerHTML = player[i].keys[e.target.className]
 
             })
 
