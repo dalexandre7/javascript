@@ -18,7 +18,10 @@ function myFunction() {
 
 -----------*/
 var userInput = document.querySelectorAll(".fill");
+var userStroke = document.querySelectorAll(".stroke");
 var userU = document.querySelectorAll(".u")
+var userD = document.querySelectorAll(".d")
+var userS = document.querySelectorAll(".s")
 console.log(userInput)
 
 
@@ -29,13 +32,28 @@ console.log(userInput)
         userInput[i].nextElementSibling.innerHTML = player[i].fill;
         userInput[i].addEventListener("input", playercolor)
 
-        function playercolor(e) {
+        function playercolor(e) { 
             player[i].fill = e.target.value
             player[i].pad.fill = e.target.value
             userInput[i].nextElementSibling.innerHTML = player[i].fill;
             
                
         }
+        userStroke[i].value = player[i].stroke; 
+        console.log(userStroke)
+        userStroke[i].nextElementSibling.innerHTML = player[i].stroke;
+        userStroke[i].addEventListener("input", playerstroke)
+
+        function playerstroke(e) {
+            player[i].stroke = e.target.value
+            player[i].pad.stroke = e.target.value
+            userStroke[i].nextElementSibling.innerHTML = player[i].stroke;
+           
+            
+               
+        }
+
+
             userU[i] = player[i].keys.u; 
             userU[i].addEventListener(`keydown`, function(e){
                 userU[i].value = [e.key]
@@ -43,6 +61,24 @@ console.log(userInput)
                 userU[i].nextElementSibling.innerHTML = player[i].keys.u
 
             })
+
+            userD[i] = player[i].keys.d; 
+            userD[i].addEventListener(`keydown`, function(e){
+                userD[i].value = [e.key]
+                player[i].keys.d = userD[i].value
+                userD[i].nextElementSibling.innerHTML = player[i].keys.d
+
+            })
+
+            userS[i] = player[i].keys.s; 
+            userS[i].addEventListener(`keydown`, function(e){
+                userS[i].value = [e.key]
+                player[i].keys.s = userS[i].value
+                userS[i].nextElementSibling.innerHTML = player[i].keys.s
+
+            })
+
+
 
         
     

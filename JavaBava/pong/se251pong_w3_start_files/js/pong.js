@@ -58,6 +58,7 @@ function init()
 states[`pause`] = function(){
     o.forEach(function (i){
         i.draw()
+        i.debug()
     })
     if(keys[`Escape`])
     {
