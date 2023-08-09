@@ -61,7 +61,7 @@ states[`pause`] = function(){
     })
     if(keys[`Escape`])
     {
-        currentState =`game`
+        currentState = `game`
     }
    
 }
