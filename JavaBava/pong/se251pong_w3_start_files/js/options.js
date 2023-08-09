@@ -60,11 +60,24 @@ console.log(userInput)
         console.log(userPower)
         userPower[i].nextElementSibling.innerHTML = player[i].power;
         userPower[i].addEventListener("input", playerpower)
+    
 
         function playerpower(e) {
+            var value = Number(e.target.value)
+            var min = Number(e.target.min)
+            var max = Number(e.target.max)
+            if(value > max)
+            {
+                e.target.value = max; 
+            }
+            if(value < min)
+            {
+                e.target.value = min; 
+            }
             player[i].power = e.target.value
             player[i].pad.power = e.target.value
             e.target.nextElementSibling.innerHTML = player[i].power;
+          
            
             
                
