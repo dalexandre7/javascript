@@ -28,6 +28,14 @@
     </main>
     <script src="js/User.js"></script>
     <script>
+        var p1 = new User(); 
+        p1.fil = `#ff000`; 
+        console.log(p1)
+        localStorage.setItem(`p1`, JSON.stringify(p1))
+        console.log(localStorage.getItem(`p1`))
+        console.log(localStorage)
+    </script>
+    <script>
         var menus = document.querySelector(`#menus`);
 
         //loading icon code
