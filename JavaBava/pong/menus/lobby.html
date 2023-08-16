@@ -40,9 +40,32 @@
     <script>
         var urlParams = new URLSearchParams(window.location.search); 
 
-        var p1 = JSON.parse(localStorage.getItem(`p1`))
-        console.log(localStorage)
+        var p1; 
+        if (urlParams.get(`load`)===`true`)
+        {
+            p1 = new User().setProps(JSON.parse(localStorage.getItem(`p1`)))
+            console.log(p1)
+        }
+        else
+        {
+            p1 = new User(); 
 
+        }
+    
+        const fields = document.querySelectorAll(`input`)
+        for( let i = 0; i<fields.length; i++)
+        {
+            fields[i].value = (p1[fields[i].classList[0]]==undefined)?
+            p1.keys[fields[i].classList[0]]:
+            p1[fields[i].classList[0]]; 
+
+            fields[i].nextElementSibling.innerHTML = (p1[fields[i].classList[0]]==undefined)? 
+            p1.keys[fields[i].classList[0]]:
+            p1[fields[i].classList[0]]; 
+
+
+        }
+        
 
     </script>
 </body>
