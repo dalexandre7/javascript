@@ -41,7 +41,7 @@
         var urlParams = new URLSearchParams(window.location.search); 
 
         var p1; 
-        if (urlParams.get(`load`)===`true`)
+        if (urlParams.get(`load`) === `true`)
         {
             p1 = new User().setProps(JSON.parse(localStorage.getItem(`p1`)))
             console.log(p1)

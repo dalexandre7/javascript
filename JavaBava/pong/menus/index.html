@@ -103,6 +103,11 @@
                 $('#start-options').animate({opacity: 1}, 500)
             });
         })
+        
+        let params = (new URL(document.location)).searchParams;
+        name = params.get("load") === null;
+        alert(name);
+
 
 
     </script>
