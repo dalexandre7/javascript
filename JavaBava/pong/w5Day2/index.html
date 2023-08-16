@@ -43,8 +43,37 @@
         startButton.appendChild(document.createTextNode(`start`));
         startMenu.appendChild(startButton)
 
-        const highScores = document.createElement(`div`);
-        highScores.setAttribute(`id`, `high-scores`);
+        const startOptions = document.createElement(`div`);
+        startOptions.setAttribute(`id`, `start-options`);
+        startOptions.style.backgroundColor=`#00ffff`;
+        startOptions.style.opacity =`0`;
+
+        const newG = document.createElement(`button`);
+        newG.setAttribute('data-load', 'false')
+        newG.appendChild(document.createTextNode(`New Game`))
+
+        const highscore = document.createElement(`button`);
+        highscore.setAttribute('data-load', 'true')
+        highscore.appendChild(document.createTextNode(`High Score`))
+
+        const continueButton = document.createElement(`button`);
+        continueButton.appendChild(document.createTextNode(`Continue`))
+        continueButton.setAttribute(`data-load`, `true`)
+        startOptions.appendChild(continueButton)
+        startOptions.appendChild(newG)
+        startOptions.appendChild(highscore)
+
+
+        continueButton.addEventListener(`click`, (e)=>{
+            window.location = `lobby.html?load = ${e.target.dataset.load}`
+        })
+        newG.addEventListener(`click`, (e)=>{
+            window.location = `lobby.html?load = ${e.target.dataset.load}`
+        })
+        highscore.addEventListener(`click`, (e)=>{
+            window.location = `hs.html?load = ${e.target.dataset.load}`
+        })
+
 
         var timer = setTimeout(loadStartMenu, 1000);
         function loadStartMenu(){
@@ -57,8 +86,10 @@
 
         startButton.addEventListener(`click`, (e)=>{
             console.log(`hi`)
-            $(`#start`).animate({opacity: 0}, 1000, function(){
-                window.location = `pong.html`
+            $(`#start`).animate({opacity: 0}, 500, function(){
+                menus.removeChild(startMenu);
+                menus.appendChild(startOptions);
+                $(`#start-options`).animate({opacity: 1}, 500)
             });
         })
 
