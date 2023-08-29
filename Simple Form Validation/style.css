@@ -10,6 +10,7 @@
 	background-color:#aaa;
 	border: 1px solid black;
 	padding: 10px;
+	
 }
 
 #confirmation
@@ -23,7 +24,7 @@
 	padding: 10px;
 	display:none;
 }
-#hidden{
-	display:none; 
+.red{
+	color: red; 
 }
 
